@@ -1,0 +1,10 @@
+:root {
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+}

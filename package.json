@@ -16,7 +16,15 @@
   },
   "dependencies": {
     "gatsby": "^3.2.1",
+    "gatsby-image": "^3.3.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-react-svg": "^3.0.1",
+    "gatsby-plugin-sharp": "^3.3.0",
+    "gatsby-source-strapi": "0.0.12",
+    "gatsby-transformer-sharp": "^3.3.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1"
   }
 }

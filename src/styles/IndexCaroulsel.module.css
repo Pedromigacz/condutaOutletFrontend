@@ -1,0 +1,38 @@
+.carouselContainer {
+    width: 100%;
+    height: calc(100vh - 156px);
+}
+
+.slider * {
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.arrowButton {
+    padding: 8px 12px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.80);
+    padding: 1.5rem 1.5rem;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(50%);
+    cursor: pointer;
+}
+
+.arrowButton:first-of-type {
+    left: 2rem;
+}
+
+.arrowButton:last-of-type {
+    right: 2rem;
+}
+
+.rightArrow {
+    transform: rotate(180deg);
+}
+
+.slider {
+    width: 100% !important;
+    height: 100% !important;
+}
