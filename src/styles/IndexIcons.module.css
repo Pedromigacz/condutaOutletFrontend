@@ -1,0 +1,46 @@
+.IndexIconsContainer {
+    font-family: 'Jost', sans-serif;
+    background-color: #F9F8F5;
+    width: 100%;
+    min-height: 254px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.IconCard {
+    display: inline-block;
+    min-width: max-content;
+    margin: 1rem;
+}
+
+.icon {
+    display: inline-block;
+}
+
+.cardTextContainer {
+    display: inline-block;
+    margin-left: 14px;
+}
+
+.cardTextContainer h1 {
+    color: #312620;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.cardTextContainer h4 {
+    color: #676565;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@media(max-width: 1280px) {
+    .IndexIconsContainer {
+        flex-direction: column;
+    }
+
+    .IconCard {
+        margin: 1.5rem 0;
+    }
+}

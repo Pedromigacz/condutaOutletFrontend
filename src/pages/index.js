@@ -1,14 +1,14 @@
 import React from 'react'
-import { Navbar, IndexCaroulsel } from '../Components'
+import { IndexCaroulsel, IndexIcons } from '../Components'
+import DefaultTemplate from '../templates/DefaultTemplate.jsx'
 import '../styles/reset.css'
 
 const Index = () => {
   return (
-    <div>
-    <Navbar />
-    <IndexCaroulsel />
-    <h1>Landing page</h1>
-    </div>
+    <DefaultTemplate>
+      <IndexCaroulsel />
+      <IndexIcons />
+    </DefaultTemplate>
   )
 }
  
