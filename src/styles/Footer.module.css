@@ -1,0 +1,92 @@
+.footer {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footerFirstLine {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3rem 0;
+}
+
+.footerCardTitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #403737;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.footerCardSecondaryTitle {
+    font-size: 15px;
+    font-weight: 500;
+    color: #302727;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footerCardText {
+    color: #555555;
+    font-size: 14px;
+    max-width: 200px;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+.footerSvg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.marginBottom {
+    margin-bottom: 8px;
+}
+
+.marginLeft {
+    margin-left: 1.5rem;
+}
+
+.footerSecondLine {
+    width: 100%;
+    height: 50px;
+    color: #403737;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.footerSecondLine p {
+    margin-left: 3.25rem;
+    display: inline-block;
+}
+
+.footerSecondLine strong {
+    font-weight: 500;
+}
+
+.footerIconsContainer {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+@media(max-width: 1280px) {
+    .footerFirstLine {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footerCard {
+        margin: 2rem 0;
+    }
+    .footerSecondLine {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .footerSecondLine p {
+        margin: 8px 3.25rem;
+        text-align: center;
+    }
+}

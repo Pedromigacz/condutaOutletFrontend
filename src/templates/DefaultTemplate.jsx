@@ -1,11 +1,12 @@
 import React from 'react';
-import { Navbar } from '../Components'
+import { Navbar, Footer } from '../Components'
 
 const DefaultTemplate = ({children}) => {
     return (
         <>
         <Navbar />
         {children}
+        <Footer />
         </>
     );
 }
