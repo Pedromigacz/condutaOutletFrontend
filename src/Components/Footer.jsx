@@ -35,7 +35,7 @@ const Footer = () => {
     return (
         <div className={styles.footer}>
             <div className={styles.footerFirstLine}>
-                <span className={styles.paymentMethodsDisclaimer}>
+                <span>
                     <h3 className={styles.footerCardTitle}>Pague com</h3>
                     <br/>
                     <Img fixed={metodosDePagamento.media.childImageSharp.fixed}/>

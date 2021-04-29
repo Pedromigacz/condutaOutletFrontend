@@ -44,11 +44,11 @@ const IndexCaroulsel = () => {
 
     return (
         <div className={styles.carouselContainer}>
-            <button className={styles.arrowButton} onClick={prevSlide}><ArrowHead/></button>
-            <button className={styles.arrowButton} onClick={nextSlide}><ArrowHead className={styles.rightArrow}/></button>
+            <button className={styles.arrowButton} onClick={prevSlide} aria-label="previvous slide"><ArrowHead/></button>
+            <button className={styles.arrowButton} onClick={nextSlide} aria-label="next slide"><ArrowHead className={styles.rightArrow}/></button>
             <Slider {...settings} className={styles.slider} ref={sliderRef}>
                 {nodes.map((image, key) => (
-                    <div key={key} className={styles.caroulselImageContainer}>
+                    <div key={key}>
                         <Img
                             fluid={image.imagem.childImageSharp.fluid}
                             imgStyle={{ objectFit: "contain" }}

@@ -8,7 +8,7 @@ module.exports = {
       options: {
         apiURL: `http://localhost:1337`,
         queryLimit: 1000, // Default to 100
-        contentTypes: [`produtos`, `carrossels`, `Assets`],
+        contentTypes: [`produtos`, `carrossels`, `Assets`, `categorias`],
         singleTypes: [],
       },
     },

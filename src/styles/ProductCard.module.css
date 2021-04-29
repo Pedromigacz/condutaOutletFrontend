@@ -1,0 +1,53 @@
+.productCardContainer {
+    display: inline-block;
+    max-width: 380px;
+    min-width: 140px;
+    width: 25%;
+    max-height: 480px;
+    margin: 1.5rem 2rem;
+    font-family: 'Jost', sans-serif;
+}
+
+.cardImage {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.cardDiscountTag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #202026;
+    background-color: #09ECA0;
+    padding: 3px 8px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.cardTitle {
+    color: #544842;
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.cardTitle:hover {
+    text-decoration: underline;
+}
+
+.cardPriceContainer {
+    font-weight: 600;
+    color: #202026;
+    font-size: 13px;
+}
+
+.cardRealPriceStyles {
+    text-decoration: 2px solid #09ECA0 underline;
+    display: block;
+}
+
+.cardOldPrice {
+    color: #c8c8c8;
+    text-decoration: line-through 2px;
+}
