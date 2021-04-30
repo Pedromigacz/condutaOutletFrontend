@@ -20,3 +20,28 @@ exports.onCreateNode = async ({ node, actions, getNode, store, cache }) => {
     }
   }
 };
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const { data: { allStrapiCategorias: { categorias } } } = await graphql(`
+  {
+    allStrapiCategorias {
+      categorias:nodes {
+        nome
+        produtos {
+            titulo
+        }
+      }
+    }   
+  }
+  `)
+  categorias.forEach((categoria) => {
+    createPage({
+      path: '/categorias/' + categoria.nome,
+      component: path.resolve("./src/templates/CategoryPage.jsx"),
+      context: {
+        slug: categoria.nome
+      },
+    })
+  })
+};
