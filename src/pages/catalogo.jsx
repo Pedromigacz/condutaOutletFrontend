@@ -5,10 +5,10 @@ import { CatalogDisplayer } from '../Components'
 
 
 const Catalogo = () => {
-    const { allStrapiProdutos: products } = useStaticQuery(graphql`
+    const { allStrapiProdutos: { products } } = useStaticQuery(graphql`
         {
             allStrapiProdutos {
-                    products:nodes {
+                products:nodes {
                     titulo
                     preco
                     preco_comparativo
