@@ -15,11 +15,13 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "framer-motion": "^4.1.11",
     "gatsby": "^3.2.1",
     "gatsby-image": "^3.3.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sharp": "^3.3.0",
+    "gatsby-source-filesystem": "^3.4.0",
     "gatsby-source-strapi": "0.0.12",
     "gatsby-transformer-sharp": "^3.3.0",
     "react": "^17.0.1",
