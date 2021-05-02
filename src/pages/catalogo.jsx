@@ -10,6 +10,7 @@ const Catalogo = () => {
             allStrapiProdutos {
                 products:nodes {
                     titulo
+                    slug
                     preco
                     preco_comparativo
                     imagem_de_capa {

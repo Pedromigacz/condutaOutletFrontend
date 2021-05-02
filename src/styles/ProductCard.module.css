@@ -51,3 +51,9 @@
     color: #c8c8c8;
     text-decoration: line-through 2px;
 }
+
+@media(max-width: 780px) {
+    .productCardContainer {
+        margin: 0.5rem 0.5rem;
+    }
+}

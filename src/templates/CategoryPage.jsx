@@ -18,6 +18,7 @@ export const query = graphql`
         allStrapiProdutos(filter: {categorias: {elemMatch: {nome: {eq: $slug}}}}) {
             produtosDaCategoria:nodes {
                 titulo
+                slug
                 preco
                 preco_comparativo
                 imagem_de_capa {
