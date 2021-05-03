@@ -4,8 +4,8 @@ const path = require("path")
 exports.onCreateNode = async ({ node, actions, getNode, store, cache }) => {
   const { createNode, createNodeField } = actions;
 
-  if (node.internal.type !== null && node.internal.type === "strapiProdutos") {
-    for (const image of node["imagens_secondarias"]) {
+  if (node.internal.type !== null && node.internal.type === "StrapiProdutos") {
+    for (const image of node.imagens_secondarias) {
       const fileNode = await createRemoteFileNode({
         url: "http://localhost:1337" + image.url,
         store,
@@ -23,6 +23,7 @@ exports.onCreateNode = async ({ node, actions, getNode, store, cache }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+  // Create categoryPages
   const { data: { allStrapiCategorias: { categorias } } } = await graphql(`
   {
     allStrapiCategorias {
@@ -44,4 +45,23 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+  const { data: { allStrapiProdutos: { produtos } } } = await graphql(`
+    {
+      allStrapiProdutos {
+        produtos:nodes {
+          slug
+        }
+      }
+    }  
+  `)
+  produtos.forEach((produto) => {
+    createPage({
+      path: '/produtos/' + produto.slug,
+      component: path.resolve("./src/templates/ProductPage.jsx"),
+      context: {
+        slug: produto.slug
+      },
+    })
+  })
+
 };

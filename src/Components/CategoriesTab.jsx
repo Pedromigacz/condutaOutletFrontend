@@ -16,10 +16,10 @@ const CategoriesTab = ({styles}) => {
             <Link to="/catalogo" className={styles.categoryLine}>Geral</Link>
             <br/>
             {categorias.map((categoria, key) => (
-                <>
-                <Link to={`/categorias/${categoria.nome}`} key={key} className={styles.categoryLine}>{categoria.nome}</Link>
+                <span key={key}>
+                <Link to={`/categorias/${categoria.nome}`} className={styles.categoryLine}>{categoria.nome}</Link>
                 <br/>
-                </>
+                </span>
             ))}            
         </div>
     );

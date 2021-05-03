@@ -1,0 +1,36 @@
+.carouselContainer {
+    min-width: 320px;
+    width: 50vw;
+    margin: 1rem;
+}
+
+.caroulselButtonsContainer {
+    display: inline-block;
+    margin: 0 8px;
+    width: 50px;
+    vertical-align: top;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.carouselButton {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 4px 0;
+}
+
+.carouselButton:first-of-type {
+    margin-top: 8px;
+}
+
+.mainImageContainer {
+    display: inline-block;
+    width: 100%;
+    height: 50vw;
+    min-height: 320px;
+}
