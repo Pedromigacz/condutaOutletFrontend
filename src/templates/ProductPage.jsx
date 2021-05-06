@@ -1,7 +1,8 @@
 import React from 'react';
 import DefaultTemplate from './DefaultTemplate.jsx'
 import { graphql } from 'gatsby'
-import { ProductPageCarousel } from '../Components'
+import { ProductPageCarousel, ProductPageForm, ProductPageDescription } from '../Components'
+import * as styles from '../styles/ProductPage.module.css'
 
 const ProductPage = (
     {
@@ -18,9 +19,12 @@ const ProductPage = (
 
     return (
         <DefaultTemplate>
-            <div>
+            <div className={styles.slugTitle}>{produto.slug}</div>
+            <div className={styles.productPageMajorContainer}>
                 <ProductPageCarousel imagesArray={imagesArray}/>
+                <ProductPageForm productData={produto}/>
             </div>
+            <ProductPageDescription description={produto.descricao}/>
         </DefaultTemplate>
     );
 }
@@ -30,6 +34,7 @@ export const query = graphql`
         produto:strapiProdutos(slug: {eq: $slug}) {
             preco
             preco_comparativo
+            cores
             slug
             tamanhos
             titulo

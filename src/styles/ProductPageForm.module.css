@@ -1,0 +1,95 @@
+.productPageFormContainer {
+    display: inline-flex;
+    flex-direction: column;
+    width: 45vw;
+    min-width: 320px;
+    margin-left: 52px;
+}
+
+.formTitle {
+    color: #312620;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.formPrice {
+    color: #312620;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: auto;
+}
+
+.formPrice del {
+    color: #C8C8C8;
+    cursor: not-allowed;
+}
+
+.sizeSelectorContainer {
+    margin-bottom: 4rem;
+}
+
+.colorSelectorContainer {
+    margin-bottom: 6rem;
+}
+
+.formLabel {
+    color: #312620;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.formButton {
+    color: #312620;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border: 3px solid #E7DFDA;
+    background-color: #fff;
+    border-radius: 0;
+    margin: 0 4px;
+    cursor: pointer;
+}
+
+.formButton:hover {
+    border: 3px dashed #E7DFDA;
+}
+
+.formButton:first-of-type {
+    margin-left: 0;
+}
+
+.addToCartButtonContainer {
+    margin-top: auto;
+}
+
+.addToCartButton {
+    border: none;
+    background-color: #36363B;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+    padding: 1.5rem 5rem;
+    min-width: 320px;
+    cursor: pointer;
+}
+
+@media(max-width: 1320px) {
+    .productPageFormContainer {
+        margin: 0;
+        width: 90vw
+    }
+    .formPrice {
+        margin-bottom: 2rem;
+    }
+    .sizeSelectorContainer {
+        margin-bottom: 2rem;
+    }
+}
+
+@media(max-width: 370px) {
+    .addToCartButton {
+        font-size: 18px;
+    }
+}

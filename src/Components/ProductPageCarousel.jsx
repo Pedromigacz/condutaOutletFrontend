@@ -4,7 +4,7 @@ import * as styles from '../styles/ProductPageCarousel.module.css'
 
 const ProductPageCarousel = ({imagesArray}) => {
     const [mainImage, setMainImage] = useState(0)
-    console.log(imagesArray)
+
     return (
         <div className={styles.carouselContainer}>
             <span className={styles.caroulselButtonsContainer}>

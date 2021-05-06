@@ -1,0 +1,42 @@
+.descricaoContainer {
+    font-family: 'Jost', 'sans-serif';
+    margin-left: 52px;
+    margin-bottom: 4rem;
+}
+
+.descricaoTitle {
+    color: #312620;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+}
+
+.descricaoMainText {
+    display: inline-block;
+    width: 600px;
+    color: #36363B;
+    font-weight: 400;
+    text-align: justify;
+    white-space: pre-line;
+    margin-left: 84px;
+}
+
+@media(max-width: 1320px) {
+    .descricaoContainer {
+        margin: 2rem;
+    }
+    
+    .descricaoMainText {
+        margin-left: 2rem;
+    }
+}
+
+@media(max-width: 680px) {
+    .descricaoTitle {
+        text-align: center;
+    }
+
+    .descricaoMainText {
+        width: 85vw;
+        margin: 0;
+    }
+}
