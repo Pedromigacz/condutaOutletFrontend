@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as styles from '../styles/ProductPageForm.module.css'
 
 const centsToReais = cents => (cents > 0) ? (cents/100).toLocaleString("pt-BR", {style: 'currency', currency: 'BRL' }) : ''
@@ -6,6 +6,7 @@ const centsToReais = cents => (cents > 0) ? (cents/100).toLocaleString("pt-BR", 
 const ProductPageForm = ({productData}) => {
     const tamanhos = productData.tamanhos.split('\n')
     const cores = productData.cores.split('\n')
+    const [formData, setFormData] = useState({cor: cores[0], tamanho: tamanhos[0]})
     return (
         <div className={styles.productPageFormContainer}>
             <h2 className={styles.formTitle}>{productData.titulo}</h2>
@@ -14,7 +15,11 @@ const ProductPageForm = ({productData}) => {
                 <h4 className={styles.formLabel}>Tamanho do produto</h4>
                 <span>
                     {tamanhos.map((tamanho, key) => (
-                        <button key={key} className={styles.formButton}>{tamanho}</button>
+                        <button
+                            key={key}
+                            onClick={e => setFormData({...formData, tamanho})}
+                            className={styles.formButton + ' ' + ((tamanho === formData.tamanho) && styles.activeButton)}
+                        >{tamanho}</button>
                     ))}
                 </span>
             </div>
@@ -22,7 +27,11 @@ const ProductPageForm = ({productData}) => {
                 <h4 className={styles.formLabel}>Cor do produto</h4>
                 <span>
                     {cores.map((cor, key) => (
-                        <button key={key} className={styles.formButton}>{cor}</button>
+                        <button
+                            key={key}
+                            onClick={e => setFormData({...formData, cor})}
+                            className={styles.formButton + ' ' + ((cor === formData.cor) && styles.activeButton)}
+                        >{cor}</button>
                     ))}
                 </span>
             </div>
