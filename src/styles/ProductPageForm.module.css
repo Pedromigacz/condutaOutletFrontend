@@ -80,7 +80,12 @@
     color: #FFFFFF;
     padding: 1.5rem 5rem;
     min-width: 320px;
+    transition: all 200ms;
     cursor: pointer;
+}
+
+.addToCartButton:hover {
+    background: #09ECA0;
 }
 
 @media(max-width: 1320px) {

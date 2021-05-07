@@ -1,13 +1,14 @@
 import React from 'react';
 import { Navbar, Footer } from '../Components'
+import CartoContextProvider from '../contexts/CartContext'
 
 const DefaultTemplate = ({children}) => {
     return (
-        <>
-        <Navbar />
-        {children}
-        <Footer />
-        </>
+        <CartoContextProvider>
+            <Navbar />
+            {children}
+            <Footer />
+        </CartoContextProvider>
     );
 }
  

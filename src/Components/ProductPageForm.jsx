@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import * as styles from '../styles/ProductPageForm.module.css'
+import { CartContext } from '../contexts/CartContext'
 
 const centsToReais = cents => (cents > 0) ? (cents/100).toLocaleString("pt-BR", {style: 'currency', currency: 'BRL' }) : ''
 
@@ -7,6 +8,23 @@ const ProductPageForm = ({productData}) => {
     const tamanhos = productData.tamanhos.split('\n')
     const cores = productData.cores.split('\n')
     const [formData, setFormData] = useState({cor: cores[0], tamanho: tamanhos[0]})
+
+    const { addItemToCart } = useContext(CartContext)
+
+    const addToCartHandler = () => {
+        const product = {
+            main: {
+                slug: productData.slug,
+                ...formData
+            },
+            secondary: {
+                titulo: productData.titulo,
+                preco: productData.preco
+            }
+        }
+        return addItemToCart(product)
+    }
+
     return (
         <div className={styles.productPageFormContainer}>
             <h2 className={styles.formTitle}>{productData.titulo}</h2>
@@ -36,7 +54,10 @@ const ProductPageForm = ({productData}) => {
                 </span>
             </div>
             <div className={styles.addToCartButtonContainer}>
-                <button className={styles.addToCartButton}>Adicionar à Sacola</button>
+                <button
+                    className={styles.addToCartButton}
+                    onClick={addToCartHandler}
+                >Adicionar à Sacola</button>
             </div>
         </div>
     );
