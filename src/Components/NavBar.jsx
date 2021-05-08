@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../contexts/CartContext';
 import LogoIcon from '../vectors/Logo.inline.svg'
 import BagIcon from '../vectors/BagIcon.inline.svg'
 import BurguerMenu from '../vectors/BurguerIcon.inline.svg'
@@ -9,6 +10,8 @@ import * as styles from '../styles/Navbar.module.css'
 import { CategoriesTab } from './'
 
 const Navbar = () => {
+    const { openCart } = useContext(CartContext)
+
     return (
         <div>
             <div className={styles.lineOne}>
@@ -17,7 +20,7 @@ const Navbar = () => {
                     <span className={styles.logoText}><strong>CONDUTA</strong>Outlet</span>
                 </Link></span>
                 <span className={styles.disclaimer} ><strong>frete grátis</strong> para todo o Brasil durante nossa semana de inauguração!</span>
-                <BagIcon className={styles.bagIcon}/>
+                <BagIcon className={styles.bagIcon} onClick={openCart}/>
             </div>
             <div className={styles.lineTwo}>
                 <div className={styles.categoriesOuterContainer}>

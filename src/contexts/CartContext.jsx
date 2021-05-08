@@ -28,8 +28,8 @@ const CartoContextProvider = props => {
     }, [setTotalPrice, cart])
 
     return (
-        <CartContext.Provider value={{ addItemToCart, removeItemFromCart, openCart }}>
-            <SideCart isCartOpen={isCartOpen} closeCart={closeCart} cart={cart} totalPrice={totalPrice}/>
+        <CartContext.Provider value={{ addItemToCart, openCart }}>
+            <SideCart isCartOpen={isCartOpen} closeCart={closeCart} cart={cart} totalPrice={totalPrice} removeItemFromCart={removeItemFromCart}/>
             {props.children}
         </CartContext.Provider>
     );
