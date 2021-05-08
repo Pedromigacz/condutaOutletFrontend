@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import DefaultTemplate from '../templates/DefaultTemplate'
 import { CatalogDisplayer } from '../Components'
 
 
@@ -26,9 +25,9 @@ const Catalogo = () => {
     `)
 
     return (
-        <DefaultTemplate>
+        <>
             <CatalogDisplayer products={products}/>
-        </DefaultTemplate>
+        </>
     )
 }
  

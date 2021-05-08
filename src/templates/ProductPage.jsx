@@ -1,5 +1,4 @@
 import React from 'react';
-import DefaultTemplate from './DefaultTemplate.jsx'
 import { graphql } from 'gatsby'
 import { ProductPageCarousel, ProductPageForm, ProductPageDescription } from '../Components'
 import * as styles from '../styles/ProductPage.module.css'
@@ -18,14 +17,14 @@ const ProductPage = (
     const imagesArray = [{localFile: imagem_de_capa}, ...imagens_secondarias]
 
     return (
-        <DefaultTemplate>
+        <>
             <div className={styles.slugTitle}>{produto.slug}</div>
             <div className={styles.productPageMajorContainer}>
                 <ProductPageCarousel imagesArray={imagesArray}/>
                 <ProductPageForm productData={produto}/>
             </div>
             <ProductPageDescription description={produto.descricao}/>
-        </DefaultTemplate>
+        </>
     );
 }
 

@@ -1,15 +1,14 @@
 import React from 'react';
-import DefaultTemplate from './DefaultTemplate.jsx'
 import { graphql } from 'gatsby'
 import { CatalogDisplayer } from '../Components'
 import * as styles from '../styles/CategoryPage.module.css'
 
 const CategoryPage = ({ data: { allStrapiProdutos: { produtosDaCategoria } }, pageContext: { slug } }) => {
     return (
-        <DefaultTemplate>
+        <>
             <h1 className={styles.categoriesPageTitle}>{slug}</h1>
             <CatalogDisplayer products={produtosDaCategoria}/>
-        </DefaultTemplate>
+        </>
     );
 }
  

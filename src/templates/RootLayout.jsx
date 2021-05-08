@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Footer } from '../Components'
 import CartoContextProvider from '../contexts/CartContext'
 
-const DefaultTemplate = ({children}) => {
+const RootLayout = ({children}) => {
     return (
         <CartoContextProvider>
             <Navbar />
@@ -12,4 +12,4 @@ const DefaultTemplate = ({children}) => {
     );
 }
  
-export default DefaultTemplate;
+export default RootLayout;
