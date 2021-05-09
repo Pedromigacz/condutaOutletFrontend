@@ -30,9 +30,14 @@
     cursor: pointer;
 }
 
+.closeCartIcon {
+    width: 2rem;
+    height: 2rem;
+}
+
 .sideCartLinesContainer {
-    width: 90%;
-    min-width: 300px;
+    width: 85%;
+    min-width: 280px;
     height: calc(100% - 200px);
     margin: 96px auto 0 auto;
     overflow-y: auto;
@@ -47,3 +52,4 @@
     font-size: 20px;
     margin: 1rem 5%;
 }
+

@@ -6,8 +6,6 @@ import DeleteCartLineIcon from '../vectors/DeleteCartLineIcon.inline.svg'
 const centsToReais = cents => (cents/100).toLocaleString("pt-BR", {style: 'currency', currency: 'BRL' });
 
 const SideCartCard = ({line, id, removeItemFromCart}) => {
-
-    console.log(line)
     return (
         <div className={styles.lineContainer}>
             <h4 className={styles.lineTitle}>{line.secondary.titulo}</h4>

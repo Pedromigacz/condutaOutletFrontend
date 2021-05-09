@@ -15,7 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "framer-motion": "^4.1.11",
+    "framer-motion": "^4.1.13",
     "gatsby": "^3.2.1",
     "gatsby-image": "^3.3.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
