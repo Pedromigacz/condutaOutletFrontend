@@ -1,0 +1,49 @@
+.sideCartBackdrop {
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(32, 32, 38, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Jost', 'sans-serif';
+    z-index: 20;
+}
+
+.sideCart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 320px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -4px 0px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.closeCartBtn {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.sideCartLinesContainer {
+    width: 90%;
+    min-width: 300px;
+    height: calc(100% - 200px);
+    margin: 96px auto 0 auto;
+    overflow-y: auto;
+}
+
+.goToCheckoutBtn {
+    width: 90%;
+    padding: 1rem 0;
+    border: none;
+    background-color: #36363B;
+    color: #fff;
+    font-size: 20px;
+    margin: 1rem 5%;
+}

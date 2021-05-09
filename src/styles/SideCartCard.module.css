@@ -1,0 +1,53 @@
+.lineContainer {
+    display: grid;
+    grid-template-columns:4fr 10fr 1fr;
+    grid-template-rows: auto 36px 36px;
+    grid-gap: 8px;
+    justify-items:stretch;
+    align-items:stretch;
+    margin-bottom: 1.5rem;
+}
+
+.lineTitle {
+    grid-column: 1/4;
+    font-weight: 600;
+    text-align: justify;
+    color: #312620;
+}
+
+.lineIconContainer {
+    width: 80px;
+    height: 80px;
+    grid-row: 2/4;
+}
+
+.sizeColorContainer {
+    grid-column: 2/4;
+    justify-self: start;
+    align-self: end;
+    color: #555555;
+    font-size: 14px;
+}
+
+.priceContainer {
+    justify-self: start;
+    align-self: end;
+    color: #312620;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.deleteLineIconContainer {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    justify-self: end;
+    align-self: end;
+}
+
+.deleteLineIcon {
+    display: inline-block;
+    width: 20px !important;
+    height: 20px !important;
+}

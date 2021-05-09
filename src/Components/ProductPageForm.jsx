@@ -19,7 +19,8 @@ const ProductPageForm = ({productData}) => {
             },
             secondary: {
                 titulo: productData.titulo,
-                preco: productData.preco
+                preco: productData.preco,
+                icon: productData.imagem_de_capa.childImageSharp
             }
         }
         return addItemToCart(product)
