@@ -3,7 +3,7 @@ import { SideCart } from '../Components/'
 
 export const CartContext = createContext()
 
-const CartoContextProvider = props => {
+const CartContextProvider = props => {
     const [cart, setCart] = useState([])
     const [isCartOpen, setIsCartOpen] = useState(false)
     const [totalPrice, setTotalPrice] = useState(0)
@@ -35,4 +35,4 @@ const CartoContextProvider = props => {
     );
 }
 
-export default CartoContextProvider;
+export default CartContextProvider;

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
+import { ContactContext } from '../contexts/ContactContext';
 import LogoIcon from '../vectors/Logo.inline.svg'
 import BagIcon from '../vectors/BagIcon.inline.svg'
 import BurguerMenu from '../vectors/BurguerIcon.inline.svg'
@@ -11,6 +12,7 @@ import { CategoriesTab } from './'
 
 const Navbar = () => {
     const { openCart } = useContext(CartContext)
+    const { openContactModal } = useContext(ContactContext)
 
     return (
         <div>
@@ -30,9 +32,9 @@ const Navbar = () => {
                         <CategoriesTab styles={styles}/>
                     </div>
                 </div>
-                <span className={styles.navButtons}><Link to="/" activeClassName={styles.activeLink}>Home</Link></span>
-                <span className={styles.navButtons}><Link to="/catalogo" activeClassName={styles.activeLink}>Shop</Link></span>
-                <span className={styles.navButtons}>Contato</span>
+                <button className={styles.navButtons}><Link to="/" activeClassName={styles.activeLink}>Home</Link></button>
+                <button className={styles.navButtons}><Link to="/catalogo" activeClassName={styles.activeLink}>Shop</Link></button>
+                <button className={styles.navButtons} onClick={openContactModal}>Contato</button>
                 <span className={styles.rightIcons}>
                     <SearchIcon className={styles.searchIcon}/>
                     <span className={styles.separator}/>

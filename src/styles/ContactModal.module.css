@@ -1,0 +1,39 @@
+.contactBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 25;
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(32, 32, 38, 0.2);
+}
+
+.contactModal {
+    display: inline-block;
+    width: 320px;
+    height: auto;
+    background-color: #fff;
+    box-shadow: -4px 0px 5px 3px rgba(0, 0, 0, 0.2);
+    padding: 3rem 2rem;
+    border-radius: 4px;
+}
+
+.closeCartButton {
+    border: none;
+    background-color: transparent;
+    float: right;
+    position: relative;
+    bottom: 2rem;
+    left: 1rem;
+    cursor: pointer;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+.closeCartButton > svg {
+    width: 100% !important;
+    height: 100% !important;
+}

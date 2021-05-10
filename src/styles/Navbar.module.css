@@ -100,6 +100,8 @@
     padding: 4px;
     cursor: pointer;
     transition: 200ms;
+    border: none;
+    background-color: transparent;
 }
 
 .navButtons:first-of-type {

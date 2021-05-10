@@ -1,14 +1,17 @@
 import React from 'react';
 import { Navbar, Footer } from '../Components'
-import CartoContextProvider from '../contexts/CartContext'
+import CartContextProvider from '../contexts/CartContext.jsx'
+import ContactContextProvider from '../contexts/ContactContext.jsx'
 
 const RootLayout = ({children}) => {
     return (
-        <CartoContextProvider>
-            <Navbar />
-            {children}
-            <Footer />
-        </CartoContextProvider>
+        <CartContextProvider>
+            <ContactContextProvider>
+                <Navbar />
+                {children}
+                <Footer />
+            </ContactContextProvider>
+        </CartContextProvider>
     );
 }
  
