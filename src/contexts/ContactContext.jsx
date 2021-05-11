@@ -4,7 +4,7 @@ import { ContactModal } from '../Components'
 export const ContactContext = createContext()
 
 const ContactContextProvider = props => {
-    const [contactModal, setContactModal] = useState(true)
+    const [contactModal, setContactModal] = useState(false)
 
     const openContactModal = () => {setContactModal(true)}
     const closeContactModal = () => {setContactModal(false)}
