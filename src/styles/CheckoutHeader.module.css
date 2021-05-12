@@ -1,0 +1,56 @@
+.CHOuterContainer {
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    margin-top: 2rem;
+}
+
+.CHInnerContainer {
+    display: inline-block;
+}
+
+.CDIconPageContainer {
+    display: inline-block;
+    width: 2.5rem;
+    margin-right: 70px;
+    text-align: center;
+}
+
+.noMarginRight {
+    margin-right: 0;
+}
+
+.CHIndicator {
+    display: inline-grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 2px solid #202026;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #202026;
+}
+
+.CHIndicatorContainer {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+div.CHIndicatorContainer::after {
+    content: "";
+    position: relative;
+    bottom: 2rem;
+    left: 2.5rem;
+    display: inline-block;
+    width: 60px;
+    margin: 0 5px;
+    vertical-align: middle;
+    border-bottom: 2px solid #202026;
+    border-radius: 0;
+}
+
+.CHLabel {
+    display: flex;
+    width: 2.5rem !important;
+    justify-content: center;
+}
