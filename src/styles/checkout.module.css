@@ -1,3 +1,5 @@
 .checkoutOuterContainer {
+    display: inline-block;
     font-family: 'Jost', 'sans-serif';
+    background-color: #F4F4F4;
 }

@@ -51,5 +51,10 @@
     color: #fff;
     font-size: 20px;
     margin: 1rem 5%;
+    transition: all 200ms;
 }
 
+.goToCheckoutBtn:hover {
+    background-color: #09eca0;
+    cursor: pointer;
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckoutHeader } from '../Components/'
+import { CheckoutHeader, Sacola } from '../Components/'
 import * as styles from '../styles/checkout.module.css'
 
 const CheckoutPage = () => {
@@ -10,7 +10,10 @@ const CheckoutPage = () => {
 
     return (
         <div className={styles.checkoutOuterContainer}>
-            <CheckoutHeader step={step}/>    
+            <CheckoutHeader step={step}/>
+            <div>
+                {step === 'sacola' && <Sacola />}
+            </div>
         </div>
     );
 }

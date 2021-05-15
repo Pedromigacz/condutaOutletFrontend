@@ -28,7 +28,7 @@ const CartContextProvider = props => {
     }, [setTotalPrice, cart])
 
     return (
-        <CartContext.Provider value={{ addItemToCart, openCart }}>
+        <CartContext.Provider value={{ addItemToCart, removeItemFromCart, openCart, closeCart, cart }}>
             <SideCart isCartOpen={isCartOpen} closeCart={closeCart} cart={cart} totalPrice={totalPrice} removeItemFromCart={removeItemFromCart}/>
             {props.children}
         </CartContext.Provider>

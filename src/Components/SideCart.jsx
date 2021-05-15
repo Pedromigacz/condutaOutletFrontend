@@ -3,6 +3,7 @@ import * as styles from '../styles/SideCart.module.css'
 import SideCartCloseIcon from '../vectors/SideCartCloseIcon.inline.svg'
 import { SideCartCard } from './'
 import { motion, AnimatePresence } from "framer-motion"
+import { Link } from 'gatsby'
 
 const backDropVariants = {
     hidden: {
@@ -83,7 +84,7 @@ const SideCart = ({isCartOpen, closeCart, removeItemFromCart, cart, totalPrice})
                                 <SideCartCard key={key} id={key} line={line} removeItemFromCart={removeItemFromCart}/>
                                 ))}
                         </div>
-                        <button className={styles.goToCheckoutBtn}>Finalizar Compra</button>
+                        <Link to="/checkout"><button className={styles.goToCheckoutBtn}>Finalizar Compra</button></Link>
                     </motion.div>
                 </motion.div>
             )
