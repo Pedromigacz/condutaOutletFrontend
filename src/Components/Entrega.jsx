@@ -1,18 +1,11 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../contexts/CartContext'
 import * as styles from '../styles/Entrega.module.css'
 import { FloatingTagInput, LoadingAnimation } from './'
 
 const Entrega = () => {
-    const [address, setAdress] = useState({
-        cep: '',
-        estado: '',
-        cidade: '',
-        bairro: '',
-        rua: '',
-        numero: '',
-        complemento: ''
-    })
+    const { address, setAdress } = useContext(CartContext)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
@@ -29,6 +22,10 @@ const Entrega = () => {
         setLoading(true)
         axios.get(`https://viacep.com.br/ws/${cep}/json/`)
         .then(e => {
+            if(e.data.erro === true) {
+                setLoading(false)
+                return setError('Cep inválido')
+            }
             setAdress({...address, cidade: e.data.localidade, estado: e.data.uf})
             setLoading(false)
         })
@@ -41,10 +38,10 @@ const Entrega = () => {
     return (
         <div className={styles.CEContainer}>
             <h2 className={styles.formTitle}>Endereço de Entrega</h2>
-            {error && <span
+            {error && <button
                 className={styles.errorDisclaimer}
                 onClick={e => setError('')}
-            >{error}</span>}
+            >{error}</button>}
             <form className={styles.CEForm} onSubmit={handleSubmit}>
                 <FloatingTagInput
                     label="Cep"
@@ -83,7 +80,7 @@ const Entrega = () => {
                     onChange={e => setAdress({...address, numero: e.target.value})}
                 />
                 <FloatingTagInput
-                    label="Complemento"
+                    label="Complemento(opcional)"
                     value={address['complemento']}
                     onChange={e => setAdress({...address, complemento: e.target.value})}
                 />

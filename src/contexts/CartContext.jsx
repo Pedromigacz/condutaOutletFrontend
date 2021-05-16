@@ -7,6 +7,15 @@ const CartContextProvider = props => {
     const [cart, setCart] = useState([])
     const [isCartOpen, setIsCartOpen] = useState(false)
     const [totalPrice, setTotalPrice] = useState(0)
+    const [address, setAdress] = useState({
+        cep: '',
+        estado: '',
+        cidade: '',
+        bairro: '',
+        rua: '',
+        numero: '',
+        complemento: ''
+    })
 
     const addItemToCart = item => {
         setCart([...cart, item])
@@ -28,7 +37,16 @@ const CartContextProvider = props => {
     }, [setTotalPrice, cart])
 
     return (
-        <CartContext.Provider value={{ addItemToCart, removeItemFromCart, openCart, closeCart, cart, totalPrice }}>
+        <CartContext.Provider value={{
+            addItemToCart,
+            removeItemFromCart,
+            openCart,
+            closeCart,
+            cart,
+            totalPrice,
+            address,
+            setAdress
+        }}>
             <SideCart isCartOpen={isCartOpen} closeCart={closeCart} cart={cart} totalPrice={totalPrice} removeItemFromCart={removeItemFromCart}/>
             {props.children}
         </CartContext.Provider>

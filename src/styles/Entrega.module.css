@@ -17,6 +17,9 @@
     display: inline-block;
     width: calc(100% - 10rem);
     max-width: 380px;
+    border: none;
+    background-color: transparent;
+    text-align: start;
 }
 
 .CEForm {
