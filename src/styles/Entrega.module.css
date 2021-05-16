@@ -9,6 +9,16 @@
     font-size: 20px;
 }
 
+.errorDisclaimer {
+    margin-left: 5rem;
+    color: #444;
+    text-decoration: underline 2px solid tomato;
+    cursor: not-allowed;
+    display: inline-block;
+    width: calc(100% - 10rem);
+    max-width: 380px;
+}
+
 .CEForm {
     margin: 1rem 5rem 3rem 5rem;
     display: grid;
