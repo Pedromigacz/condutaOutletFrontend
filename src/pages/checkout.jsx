@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
-import { CheckoutHeader, Sacola } from '../Components/'
+import { CheckoutHeader, Sacola, CheckoutComander, Entrega } from '../Components/'
 import * as styles from '../styles/checkout.module.css'
+
+const stepDisplayer = (step) => {
+    if(step === 'sacola') return <Sacola />
+    if(step === 'entrega') return <Entrega />
+}
 
 const CheckoutPage = () => {
     const [step, setStep] = useState('sacola')
     // const displaySacola = () => {setStep('sacola')}
-    // const displayEntrega = () => {setStep('entrega')}
-    // const displayPagamento = () => {setStep('pagamento')}
+    const displayEntrega = () => {setStep('entrega')}
+    // const displayPagamento = () => {setStep('pagamento')}    
 
     return (
         <div className={styles.checkoutOuterContainer}>
             <CheckoutHeader step={step}/>
-            <div>
-                {step === 'sacola' && <Sacola />}
+            <div className={styles.checkoutInnerConatiner}>
+                {stepDisplayer(step)}
+                <CheckoutComander displayEntrega={displayEntrega} />
             </div>
         </div>
     );

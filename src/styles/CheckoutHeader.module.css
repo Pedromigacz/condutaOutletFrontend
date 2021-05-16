@@ -1,5 +1,5 @@
 .CHOuterContainer {
-    width: 100vw;
+    width: 100%;
     display: grid;
     place-items: center;
     margin-top: 2rem;

@@ -1,0 +1,48 @@
+.CCContainer {
+    display: inline-block;
+    background-color: #fff;
+    margin: 0 0.5rem;
+    padding: 3rem 0;
+    color: #312620;
+}
+
+.CCLine {
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5rem;
+    margin: .5rem 2rem 0 2rem;
+}
+
+.freeFreightColor {
+    color: #09ECA0;
+}
+
+.CCMainLine {
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 2rem 0 2rem;
+}
+
+.CCMainLinePrice {
+    margin-left: 2rem;
+}
+
+.nextStepButton {
+    margin-top: .5rem;
+    border: none;
+    color: #fff;
+    background-color: #36363B;
+    font-size: 20px;
+    width: 280px;
+    padding: 1rem 0;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.nextStepButton:hover {
+    background-color: #09ECA0;
+}

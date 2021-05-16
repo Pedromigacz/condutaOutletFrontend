@@ -10,7 +10,7 @@ const Sacola = () => {
     
     useEffect(() => {
         closeCart()
-    }, [])
+    }, [closeCart])
 
     return (
         <div>
