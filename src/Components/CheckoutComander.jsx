@@ -44,8 +44,8 @@ const CheckoutComander = ({ displayEntrega, step, setError }) => {
             data: obj
           })
             .then(res => {
-              console.log(res.data.PaymentLink)
-              setLoading(false)
+                window.location.href = res.data.PaymentLink
+                setLoading(false)
             })
             .catch(err => {
                 setError('Algo de errado ocorreu')
