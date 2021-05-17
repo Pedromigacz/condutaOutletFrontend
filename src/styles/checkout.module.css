@@ -13,3 +13,10 @@
     min-height: calc(100vh - 302px);
     margin-top: 3rem;
 }
+
+@media(max-width: 930px) {
+    .checkoutInnerConatiner {
+        flex-direction: column;
+        align-items: center;
+    }
+}

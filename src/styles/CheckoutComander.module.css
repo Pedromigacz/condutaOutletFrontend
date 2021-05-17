@@ -47,3 +47,9 @@
 .nextStepButton:hover {
     background-color: #09ECA0;
 }
+
+@media(max-width: 930px) {
+    .CCContainer {
+        margin: 2rem 0;
+    }
+}
