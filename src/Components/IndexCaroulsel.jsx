@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import * as styles from '../styles/IndexCaroulsel.module.css'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from "gatsby-image"
@@ -9,6 +9,7 @@ import ArrowHead from '../vectors/ArrowHead.inline.svg'
 
 const IndexCaroulsel = () => {
     const sliderRef = useRef()
+    const [slidesNumber, setSlidesNumber] = useState(3)
     const { allStrapiCarrossels: { nodes } } = useStaticQuery(graphql`
     {
         allStrapiCarrossels {
@@ -25,12 +26,18 @@ const IndexCaroulsel = () => {
     }
     `)
 
+    useEffect(() => {
+        if(window.innerWidth >= 690) return setSlidesNumber(3)
+        if(window.innerWidth >= 370) return setSlidesNumber(2)
+        return setSlidesNumber(1)
+    }, [])
+
     const settings = {
         dots: false,
         infinite: true,
         arrows: false,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: slidesNumber,
         slidesToScroll: 1
     }
      
