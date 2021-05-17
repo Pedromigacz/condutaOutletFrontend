@@ -1,11 +1,16 @@
 .iconContainer {
-    height: 100%;
-    width: 100%;
     display: inline-grid;
     align-items: center;
+    max-height: 50px !important;
+    max-width: 35px !important;
 }
 
 .iconContainer > svg {
-    width: 100%;
-    height: 80%;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.iconContainer > svg > path {
+    display: inline-block;
+    max-height: 100%;
 }

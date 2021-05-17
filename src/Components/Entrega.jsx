@@ -3,11 +3,29 @@ import React, { useState, useContext } from 'react';
 import { CartContext } from '../contexts/CartContext'
 import * as styles from '../styles/Entrega.module.css'
 import { FloatingTagInput, LoadingAnimation } from './'
+import { motion } from 'framer-motion'
 
-const Entrega = () => {
+const stepVariants = {
+    initial: {
+      opacity: 0,
+      x: 800,
+      transition: { delay: 0.2, duration: 0.2, ease: 'easeInOut' }
+    },
+    animate: {
+        opacity: 1,
+        x: 0,
+        transition: { delay: 0.2, duration: 0.2, ease: 'easeInOut' }
+    },
+    exit: {
+        opacity: 0,
+        x: -800,
+        transition: { delay: 0.2, duration: 0.2, ease: 'easeInOut' }
+    }
+}
+
+const Entrega = ({ error, setError }) => {
     const { address, setAdress } = useContext(CartContext)
     const [loading, setLoading] = useState(false)
-    const [error, setError] = useState('')
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -36,7 +54,13 @@ const Entrega = () => {
     }
 
     return (
-        <div className={styles.CEContainer}>
+        <motion.div
+            className={styles.CEContainer}
+            variants={stepVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+        >
             <h2 className={styles.formTitle}>Endereço de Entrega</h2>
             {error && <button
                 className={styles.errorDisclaimer}
@@ -85,7 +109,7 @@ const Entrega = () => {
                     onChange={e => setAdress({...address, complemento: e.target.value})}
                 />
             </form>
-        </div>
+        </motion.div>
     )
 }
  

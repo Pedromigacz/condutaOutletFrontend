@@ -37,6 +37,7 @@
     color: #fff;
     background-color: #36363B;
     font-size: 20px;
+    max-height: 61px;
     width: 280px;
     padding: 1rem 0;
     cursor: pointer;

@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
 import { CheckoutHeader, Sacola, CheckoutComander, Entrega } from '../Components/'
 import * as styles from '../styles/checkout.module.css'
-
-const stepDisplayer = (step) => {
-    if(step === 'sacola') return <Sacola />
-    if(step === 'entrega') return <Entrega />
-}
+import { AnimatePresence } from 'framer-motion'
 
 const CheckoutPage = () => {
     const [step, setStep] = useState('sacola')
+    const [error, setError] = useState('')
     // const displaySacola = () => {setStep('sacola')}
     const displayEntrega = () => {setStep('entrega')}
-    // const displayPagamento = () => {setStep('pagamento')}    
+    // const displayPagamento = () => {setStep('pagamento')}
+    
+    const stepDisplayer = (step) => {
+        if(step === 'sacola') return <Sacola key="1"/>
+        if(step === 'entrega') return <Entrega key="2" error={error} setError={setError}/>
+    }
 
     return (
         <div className={styles.checkoutOuterContainer}>
             <CheckoutHeader step={step}/>
             <div className={styles.checkoutInnerConatiner}>
-                {stepDisplayer(step)}
-                <CheckoutComander displayEntrega={displayEntrega} />
+                <AnimatePresence exitBeforeEnter>
+                    {stepDisplayer(step)}
+                </AnimatePresence>
+                <CheckoutComander displayEntrega={displayEntrega} step={step} setError={setError}/>
             </div>
         </div>
     );

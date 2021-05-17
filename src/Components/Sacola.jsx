@@ -3,6 +3,25 @@ import { CartContext } from '../contexts/CartContext'
 import { ContactContext } from '../contexts/ContactContext'
 import * as styles from '../styles/Sacola.module.css'
 import { SideCartCard } from './'
+import { motion } from 'framer-motion'
+
+const stepVariants = {
+    initial: {
+      opacity: 0,
+      x: 800,
+      transition: { delay: 0.2, duration: 0.2, ease: 'easeInOut' }
+    },
+    animate: {
+        opacity: 1,
+        x: 0,
+        transition: { delay: 0.2, duration: 0.2, ease: 'easeInOut' }
+    },
+    exit: {
+        opacity: 0,
+        x: -800,
+        transition: { delay: 0.2, duration: 0.2, ease: 'easeInOut' }
+    }
+}
 
 const Sacola = () => {
     const { cart, closeCart, removeItemFromCart } = useContext(CartContext)
@@ -13,7 +32,12 @@ const Sacola = () => {
     }, [closeCart])
 
     return (
-        <div>
+        <motion.div
+            variants={stepVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+        >
             <div className={styles.sacolaContainer}>
                 <div className={styles.sacola}>
                     {cart.map((line, key) => (
@@ -29,7 +53,7 @@ const Sacola = () => {
                     onClick={openContactModal}
                 >Clicke aqui</button>
             </div>
-        </div>
+        </motion.div>
     );
 }
  
