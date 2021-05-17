@@ -58,3 +58,7 @@
     background-color: #09eca0;
     cursor: pointer;
 }
+
+.notAllowed {
+    cursor: not-allowed !important;
+}

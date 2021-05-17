@@ -84,7 +84,7 @@ const SideCart = ({isCartOpen, closeCart, removeItemFromCart, cart, totalPrice})
                                 <SideCartCard key={key} id={key} line={line} removeItemFromCart={removeItemFromCart}/>
                                 ))}
                         </div>
-                        <Link to="/checkout"><button className={styles.goToCheckoutBtn}>Finalizar Compra</button></Link>
+                        {cart.length ? <Link to="/checkout"><button className={styles.goToCheckoutBtn}>Finalizar Compra</button></Link> : <button className={styles.goToCheckoutBtn + ' ' + styles.notAllowed}>Carrinho vazio</button>}
                     </motion.div>
                 </motion.div>
             )
