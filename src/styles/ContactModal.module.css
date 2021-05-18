@@ -2,12 +2,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 25;
+    z-index: 125;
     display: grid;
     place-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(32, 32, 38, 0.2);
+    background-color: rgba(32, 32, 38, 0.9);
 }
 
 .contactModal {

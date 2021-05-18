@@ -1,4 +1,5 @@
 export { default as Navbar } from './NavBar'
+export { default as MobileNavbar } from './MobileNavbar'
 export { default as ContactData } from './ContactData'
 export { default as Footer } from './Footer'
 export { default as IndexCaroulsel } from './IndexCaroulsel'
