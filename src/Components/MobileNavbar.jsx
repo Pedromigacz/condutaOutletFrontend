@@ -1,12 +1,15 @@
 import React, { useState, useContext } from 'react';
 import { ContactContext } from '../contexts/ContactContext'
+import { CartContext } from '../contexts/CartContext';
 import * as styles from '../styles/MobileNavbar.module.css'
 import BurguerIcon from '../vectors/BurguerIcon.inline.svg'
+import BagIcon from '../vectors/BagIcon.inline.svg'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 
 const MobileNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const { openContactModal } = useContext(ContactContext)
+    const { openCart } = useContext(CartContext)
 
     const openMenu = () => {
         setIsMenuOpen(true)
@@ -27,15 +30,21 @@ const MobileNavbar = () => {
     `)
 
     return (
-        <>
+        <>  
+            <button
+                className={styles.bagMenu}
+                aria-label="Carrinho"
+                onClick={openCart}
+            ><BagIcon /></button>
             <button
                 className={styles.burguerMenu}
+                aria-label="Menu"
                 onClick={openMenu}
             ><BurguerIcon /></button>
             {isMenuOpen && (
             <div className={styles.modalMenu}>
                 <button
-                aria-label="closeMenu"
+                aria-label="Fechar menu"
                 className={styles.closeMenu}
                 onClick={closeMenu}
                 >
