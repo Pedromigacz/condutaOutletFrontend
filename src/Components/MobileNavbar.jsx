@@ -5,6 +5,19 @@ import * as styles from '../styles/MobileNavbar.module.css'
 import BurguerIcon from '../vectors/BurguerIcon.inline.svg'
 import BagIcon from '../vectors/BagIcon.inline.svg'
 import { graphql, useStaticQuery, Link } from 'gatsby'
+import { motion, AnimatePresence } from 'framer-motion'
+
+const modalVariants = {
+    hidden: {
+      opacity: 0,
+      x: 500,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { delay: 0.2, duration: 0.2, ease: 'easeInOut' }
+    }
+}
 
 const MobileNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -41,39 +54,47 @@ const MobileNavbar = () => {
                 aria-label="Menu"
                 onClick={openMenu}
             ><BurguerIcon /></button>
+            <AnimatePresence exitBeforeEnter>
             {isMenuOpen && (
-            <div className={styles.modalMenu}>
-                <button
-                aria-label="Fechar menu"
-                className={styles.closeMenu}
-                onClick={closeMenu}
+                <motion.div
+                    className={styles.modalMenu}
+                    variants={modalVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
                 >
-                    X
-                </button>
-                <div
-                    className={styles.link}
+                    <button
+                    aria-label="Fechar menu"
+                    className={styles.closeMenu}
                     onClick={closeMenu}
-                ><Link to="/">Home</Link></div>
-                <div
-                    className={styles.link}
-                    onClick={closeMenu}
-                ><Link to="/catalogo">Shop</Link></div>
-                <div
-                    className={styles.link}
-                    onClick={e => {
-                        openContactModal()
-                    }}
-                >Contato</div>
-                <h4 className={styles.categoriesDisclaimer}>Categorias:</h4>
-                {categorias.map((categoria, key) => (
-                    <div key={key} className={styles.link}>
-                        <Link to={`/categorias/${categoria.nome}`} onClick={closeMenu}>
-                            {categoria.nome}
-                        </Link>
-                    </div>
-                ))}  
-            </div>
-            )}
+                    >
+                        X
+                    </button>
+                    <div
+                        className={styles.link}
+                        onClick={closeMenu}
+                    ><Link to="/">Home</Link></div>
+                    <div
+                        className={styles.link}
+                        onClick={closeMenu}
+                    ><Link to="/catalogo">Shop</Link></div>
+                    <div
+                        className={styles.link}
+                        onClick={e => {
+                            openContactModal()
+                        }}
+                    >Contato</div>
+                    <h4 className={styles.categoriesDisclaimer}>Categorias:</h4>
+                    {categorias.map((categoria, key) => (
+                        <div key={key} className={styles.link}>
+                            <Link to={`/categorias/${categoria.nome}`} onClick={closeMenu}>
+                                {categoria.nome}
+                            </Link>
+                        </div>
+                    ))}  
+                </motion.div>
+                )}
+            </AnimatePresence>
         </>
     );
 }
