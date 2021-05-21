@@ -7,7 +7,7 @@ exports.onCreateNode = async ({ node, actions, getNode, store, cache }) => {
   if (node.internal.type !== null && node.internal.type === "StrapiProdutos") {
     for (const image of node.imagens_secondarias) {
       const fileNode = await createRemoteFileNode({
-        url: "http://localhost:1337" + image.url,
+        url: process.env.GATSBY_BACKEND_URL ? process.env.GATSBY_BACKEND_URL : "http://localhost:1337" + image.url,
         store,
         cache,
         createNode,
