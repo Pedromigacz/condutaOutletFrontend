@@ -16,7 +16,7 @@ const CategoryPage = ({
     return (
         <>  
             <SEO
-                url={"https://condutaoutlet.com/categorias/" + slug}
+                url={"https://www.condutaoutlet.com/categorias/" + slug}
                 title={"Conduta Outlet categoria" + slug}
                 description={`Categoria ${slug} de Conduta Outlet, o melhor outlet da internet disponível pra você no conforto da sua casa`}
             />

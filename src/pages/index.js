@@ -6,7 +6,7 @@ import { SEO } from '../Components'
 const Index = () => {
   return (
     <>
-      <SEO url="https://condutaoutlet.com/"/>
+      <SEO url="https://www.condutaoutlet.com/"/>
       <IndexCaroulsel />
       <IndexIcons />
     </>

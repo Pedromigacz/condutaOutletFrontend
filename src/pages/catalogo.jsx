@@ -28,7 +28,7 @@ const Catalogo = () => {
         <>  
             <SEO
                 title="CONDUTAOutlet Catálogo"
-                url="https://condutaoutlet.com/catalogo/"
+                url="https://www.condutaoutlet.com/catalogo/"
                 description="Catálogo do outlet mais bem conceituado da internet."
             />
             <CatalogDisplayer products={products}/>

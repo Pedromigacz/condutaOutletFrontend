@@ -23,7 +23,7 @@ const NotFoundPage = () => {
   return (
     <>
     <SEO
-    url="https://condutaoutlet.com"
+    url="https://www.condutaoutlet.com"
     title="Página não encontrada"
     />
     <main style={pageStyles}>
