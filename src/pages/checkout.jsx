@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CheckoutHeader, Sacola, CheckoutComander, Entrega } from '../Components/'
 import * as styles from '../styles/checkout.module.css'
 import { AnimatePresence } from 'framer-motion'
-import { Helmet } from 'react-helmet'
+import Helmet from 'react-helmet'
 
 const CheckoutPage = () => {
     const [step, setStep] = useState('sacola')

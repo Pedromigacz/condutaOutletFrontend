@@ -1,11 +1,11 @@
 import React from 'react';
-import { Helmet } from 'react-helmet'
+import Helmet from 'react-helmet'
 
 // List of properties: title, description, image, type, url
 const SEO = ({ title, description, image, url }) => (
         <Helmet defer={false}>
         {/* General tags */}
-        <title>{title ? title : `Conduta Outlet`}</title>
+        <title>{title ? title : `CONDUTAOutlet`}</title>
         <meta name="description" content={description ? description : `O melhor outlet da internet disponível pra você no conforto da sua casa`} />
         <meta name="image" content={image ? image : `https://admin.condutaoutlet.com/uploads/SEO_Default_Thumb_7d7b50ee28.png`} />
 
