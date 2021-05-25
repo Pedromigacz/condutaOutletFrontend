@@ -3,6 +3,7 @@ module.exports = {
     title: "CondutaOutlet",
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-strapi`,
       options: {

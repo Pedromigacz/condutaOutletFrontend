@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby'
 import { ProductPageCarousel, ProductPageForm, ProductPageDescription } from '../Components'
 import * as styles from '../styles/ProductPage.module.css'
+import { SEO } from '../Components'
 
 const ProductPage = (
     {
@@ -18,6 +19,12 @@ const ProductPage = (
 
     return (
         <>
+            <SEO
+                url={`https://condutaoutlet.com/produtos/` + produto.slug}
+                title={produto.titulo}
+                description={"Produto vendido por Conduta Outlet"}
+                image={`https://condutaoutlet.com` + produto.imagem_de_capa.childImageSharp.fluid.src}
+            />
             <div className={styles.slugTitle}>{produto.slug}</div>
             <div className={styles.productPageMajorContainer}>
                 <ProductPageCarousel imagesArray={imagesArray}/>

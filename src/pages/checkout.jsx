@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CheckoutHeader, Sacola, CheckoutComander, Entrega } from '../Components/'
 import * as styles from '../styles/checkout.module.css'
 import { AnimatePresence } from 'framer-motion'
+import { Helmet } from 'react-helmet'
 
 const CheckoutPage = () => {
     const [step, setStep] = useState('sacola')
@@ -16,6 +17,10 @@ const CheckoutPage = () => {
     }
 
     return (
+        <>
+        <Helmet>
+            <meta name={`robots`} content={`noindex, nofollow`}/>
+        </Helmet>
         <div className={styles.checkoutOuterContainer}>
             <CheckoutHeader step={step}/>
             <div className={styles.checkoutInnerConatiner}>
@@ -25,6 +30,7 @@ const CheckoutPage = () => {
                 <CheckoutComander displayEntrega={displayEntrega} step={step} setError={setError}/>
             </div>
         </div>
+        </>
     );
 }
  

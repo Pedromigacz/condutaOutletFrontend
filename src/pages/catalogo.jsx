@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { CatalogDisplayer } from '../Components'
-
+import { SEO } from '../Components'
 
 const Catalogo = () => {
     const { allStrapiProdutos: { products } } = useStaticQuery(graphql`
@@ -25,7 +25,12 @@ const Catalogo = () => {
     `)
 
     return (
-        <>
+        <>  
+            <SEO
+                title="CONDUTAOutlet Catálogo"
+                url="https://condutaoutlet.com/catalogo/"
+                description="Catálogo do outlet mais bem conceituado da internet."
+            />
             <CatalogDisplayer products={products}/>
         </>
     )
