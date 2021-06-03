@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby'
 import { CatalogDisplayer } from '../Components'
 import * as styles from '../styles/CategoryPage.module.css'
-import { SEO } from '../Components'
+import { Seo } from '../Components'
 
 const CategoryPage = ({
     data: {
@@ -15,7 +15,7 @@ const CategoryPage = ({
     }) => {
     return (
         <>  
-            <SEO
+            <Seo
                 url={"https://www.condutaoutlet.com/categorias/" + slug}
                 title={"Conduta Outlet categoria" + slug}
                 description={`Categoria ${slug} de Conduta Outlet, o melhor outlet da internet disponível pra você no conforto da sua casa`}

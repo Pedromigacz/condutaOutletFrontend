@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet'
 
 // List of properties: title, description, image, type, url
-const SEO = ({ title, description, image, url }) => (
+const Seo = ({ title, description, image, url }) => (
         <Helmet defer={false}>
         {/* General tags */}
         <title>{title ? title : `CONDUTAOutlet`}</title>
@@ -26,4 +26,4 @@ const SEO = ({ title, description, image, url }) => (
       </Helmet>
 )
  
-export default SEO;
+export default Seo;

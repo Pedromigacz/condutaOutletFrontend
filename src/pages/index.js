@@ -1,12 +1,12 @@
 import React from 'react'
 import { IndexCaroulsel, IndexIcons } from '../Components'
 import '../styles/reset.css'
-import { SEO } from '../Components'
+import { Seo } from '../Components'
 
 const Index = () => {
   return (
     <>
-      <SEO url="https://www.condutaoutlet.com/"/>
+      <Seo url="https://www.condutaoutlet.com/"/>
       <IndexCaroulsel />
       <IndexIcons />
     </>
